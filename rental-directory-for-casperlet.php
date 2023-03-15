@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:   Rental Directory for CasperLet
- * Plugin URI:    https://darknebula.world
+ * Plugin URI:    https://darknebula.world/software-plugins/casperlet-wordpress-plugin/
  * Description:   Shows CasperLet Rentals
  * Version:       1.0.0
  * Author:        Nolan Perry, LLC
