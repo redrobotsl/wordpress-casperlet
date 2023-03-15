@@ -125,7 +125,10 @@ return '
 
 $output = '';
 $api_key_1 = get_option( 'RRCLET_api_key' ); // Array of All Options
-
+$cache = "";
+if( get_transient( 'RRCLET' ) ) {
+	$cache =  get_transient( 'RRCLET' );
+} else {
 $theurltouse = 'https://www.casperpanel.com/api/rentals.php?accessKey=' . $api_key_1;
 $args = array();
 $response = wp_remote_get( $theurltouse, $args );
@@ -133,8 +136,12 @@ $response = wp_remote_get( $theurltouse, $args );
 $bodyofchrist =  wp_remote_retrieve_body( $response );
 $d1 = json_decode(substr($bodyofchrist,5));
 $d2 = $d1->availableUnits;
+set_transient( 'RRCLET', $d2, DAY_IN_SECONDS/2 );
 
-foreach($d2 as $query){
+$cache = $d2;
+
+}
+foreach($cache as $query){
 $addon = $this->clet_rentals_templater($query);
 $output .= $addon;
 }
