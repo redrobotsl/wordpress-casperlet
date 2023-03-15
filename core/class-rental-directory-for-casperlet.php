@@ -40,15 +40,6 @@ if ( ! class_exists( 'Rental_Directory_For_Casperlet' ) ) :
 		private static $instance;
 
 		/**
-		 * RRCLET helpers object.
-		 *
-		 * @access	public
-		 * @since	1.0.0
-		 * @var		object|Rental_Directory_For_Casperlet_Helpers
-		 */
-		public $helpers;
-
-		/**
 		 * RRCLET settings object.
 		 *
 		 * @access	public
@@ -98,7 +89,6 @@ if ( ! class_exists( 'Rental_Directory_For_Casperlet' ) ) :
 				self::$instance					= new Rental_Directory_For_Casperlet;
 				self::$instance->base_hooks();
 				self::$instance->includes();
-				self::$instance->helpers		= new Rental_Directory_For_Casperlet_Helpers();
 				self::$instance->settings		= new Rental_Directory_For_Casperlet_Settings();
                 self::$instance->options		= new RRCLET_Options();
 				//Fire the plugin logic
@@ -123,7 +113,6 @@ if ( ! class_exists( 'Rental_Directory_For_Casperlet' ) ) :
 		 * @return  void
 		 */
 		private function includes() {
-			require_once RRCLET_PLUGIN_DIR . 'core/includes/classes/class-rental-directory-for-casperlet-helpers.php';
 			require_once RRCLET_PLUGIN_DIR . 'core/includes/classes/class-rental-directory-for-casperlet-settings.php';
 
 			require_once RRCLET_PLUGIN_DIR . 'core/includes/classes/class-rental-directory-for-casperlet-run.php';
