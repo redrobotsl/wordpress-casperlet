@@ -70,7 +70,7 @@ return	sanitize_text_field( $input );
 	}
 
 	public function RRCLET_section_info() {
-		echo "Testing";
+		return "Welcome! Add config info here!";
 	}
 
 	public function RRCLET_api_key_callback() {
